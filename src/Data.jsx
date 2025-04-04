@@ -1,4 +1,3 @@
-
 const blogCategories = [
   { id: "literature", name: { en: "Literature", hi: "साहित्य" } },
   { id: "culture", name: { en: "Culture", hi: "संस्कृति" } },

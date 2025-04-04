@@ -1,7 +1,7 @@
 import React from "react";
 import { Calendar, Users, BookOpen } from "lucide-react";
 
-import { events, members, blogPosts, blogCategories } from "../data";
+import { events, members, blogPosts, blogCategories } from "../Data";
 import ParallaxSection from "../components/ParalaxSection";
 import Newsletter from "../components/NewsLetterSection";
 import BlogPreview from "../components/BlogPreview";
