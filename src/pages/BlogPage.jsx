@@ -1,6 +1,6 @@
 import React from "react";
 import Blog from "../components/Blog";
-import { blogPosts, blogCategories } from "../data";
+import { blogCategories, blogPosts } from "../data";
 
 const BlogPage = ({ language }) => {
   return (
