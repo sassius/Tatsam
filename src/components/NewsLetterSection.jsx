@@ -30,11 +30,11 @@ const Newsletter = ({ language }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={language === "en" ? "Your email" : "आपका ईमेल"}
-            className="flex-1 px-4 py-2 rounded-l-lg text-gray-900 focus:outline-none"
+            className="flex-1 px-4 py-2 rounded-l-lg text-white outline outline-white"
           />
           <button
             type="submit"
-            className="bg-purple-600 px-6 py-2 rounded-r-lg hover:bg-purple-700 transition-colors flex items-center"
+            className="bg-purple-600 outline outline-white px-6 py-2 rounded-r-lg hover:bg-purple-700 transition-colors flex items-center"
           >
             <Send size={20} className="mr-2" />
             {language === "en" ? "Subscribe" : "सदस्यता लें"}
