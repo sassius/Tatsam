@@ -17,7 +17,7 @@ function About({ language }) {
             <Loader2 className="absolute -left-12 top-0 w-24 h-24 text-indigo-600 animate-spin-slow" />
             <div className="rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80"
+                src="./group.jpeg"
                 alt="Interior designer at work"
                 className="w-full h-[600px] object-cover"
               />
