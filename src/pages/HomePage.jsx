@@ -8,6 +8,7 @@ import BlogPreview from "../components/BlogPreview";
 import MemberSection from "../components/MemberSection";
 import About from "../components/About";
 import EventSlider from "../components/EventSlider";
+import Shlokas from "./Shlokas";
 
 const HomePage = ({ language }) => {
   return (
@@ -83,7 +84,7 @@ const HomePage = ({ language }) => {
             )}
           </div>
         </div> */}
-        <About language = {language}/>
+        <About language={language} />
       </ParallaxSection>
 
       {/* Events Section */}
@@ -93,10 +94,15 @@ const HomePage = ({ language }) => {
             <Calendar className="mr-3" />
             {language === "en" ? "Events" : "कार्यक्रम"}
           </h2>
-          <EventSlider language={language}/>
+          <EventSlider language={language} />
         </div>
       </ParallaxSection>
-
+      <ParallaxSection className="bg-purple-50">
+        <div className="max-w-7xl mx-auto px-4 py-24">
+          
+          <Shlokas language={language} />
+          </div>
+      </ParallaxSection>
       {/* Members Section */}
       <ParallaxSection className="bg-white">
         {/* <div className="max-w-7xl mx-auto px-4 py-24"> */}
