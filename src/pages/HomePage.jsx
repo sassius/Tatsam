@@ -5,6 +5,9 @@ import { events, members, blogPosts, blogCategories } from "../data";
 import ParallaxSection from "../components/ParalaxSection";
 import Newsletter from "../components/NewsLetterSection";
 import BlogPreview from "../components/BlogPreview";
+import MemberSection from "../components/MemberSection";
+import About from "../components/About";
+import EventSlider from "../components/EventSlider";
 
 const HomePage = ({ language }) => {
   return (
@@ -29,16 +32,58 @@ const HomePage = ({ language }) => {
 
       {/* About Section */}
       <ParallaxSection className="bg-white">
-        <div id="about" className="max-w-7xl mx-auto px-4 py-24">
+        {/* <div id='about' className="max-w-7xl mx-auto px-4 py-24">
           <h2 className="text-4xl font-bold text-center mb-12">
             {language === "en" ? "About Us" : "हमारे बारे में"}
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-            {language === "en"
-              ? "Tatsam is the Hindi Literary Society of NSUT, dedicated to promoting Hindi literature and culture through various events and activities."
-              : "तत्सम एनएसयूटी का हिंदी साहित्यिक समाज है, जो विभिन्न कार्यक्रमों और गतिविधियों के माध्यम से हिंदी साहित्य और संस्कृति को बढ़ावा देने के लिए समर्पित है।"}
-          </p>
-        </div>
+          <div className="text-lg text-gray-700 max-w-4xl mx-auto space-y-6">
+            {language === "en" ? (
+              <>
+                <p>
+                  "Tatsam" is committed to promoting Hindi reading and writing
+                  among the students of Netaji Subhas University of Technology.
+                  Tatsam represents all students of the university who are
+                  interested in the Hindi language. Our primary aim is to
+                  cultivate a strong inclination towards Hindi within the
+                  university.
+                </p>
+                <p>
+                  We strive to achieve this goal by organizing various
+                  competitions such as debates, poetry writing and recitation,
+                  story writing, and more. In addition to this, we also host
+                  numerous seminars, poetry gatherings, and other events based
+                  on Hindi literature.
+                </p>
+                <p>
+                  Ultimately, Tatsam is not just a group of like-minded students
+                  — it is an emerging ideology rapidly gaining momentum within
+                  the university.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  "तत्सम" नेताजी सुभाष प्रौद्योगिकी विश्वविद्यालय के छात्रों में
+                  हिंदी वाचन एवं लेखन को प्रोत्साहित करने के लिए प्रतिबद्ध है।
+                  तत्सम विश्वविद्यालय के सभी हिंदी में रुचि रखने वाले छात्रों का
+                  प्रतिनिधित्व करती है। हमारा ध्येय मूलतः विश्वविद्यालय में
+                  हिंदी के प्रति रुझान पैदा करना है।
+                </p>
+                <p>
+                  इस उद्देश्य की पूर्ति हम विभिन्न प्रतियोगिताओं के आयोजन द्वारा
+                  करते है जैसे वाद-विवाद, कविता लेखन एवं पाठन, कहानी लेखन
+                  इत्यादि। इसके अलावा हम हिंदी साहित्य पर आधारित अनेक
+                  संगोष्ठियों, कवि सम्मेलनों आदि का भी आयोजन करते है।
+                </p>
+                <p>
+                  अंततः तत्सम महज़ समान रुचि रखने वाले छात्रों का समूह ही नही
+                  बल्कि विश्वविद्यालय में तेज़ी से उभरती हुई एक विचारधारा है।
+                </p>
+              </>
+            )}
+          </div>
+        </div> */}
+        <About language = {language}/>
       </ParallaxSection>
 
       {/* Events Section */}
@@ -48,53 +93,15 @@ const HomePage = ({ language }) => {
             <Calendar className="mr-3" />
             {language === "en" ? "Events" : "कार्यक्रम"}
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {events.map((event) => (
-              <div
-                key={event.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform"
-              >
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                  <p className="text-gray-600 mb-4">
-                    {new Date(event.date).toLocaleDateString(
-                      language === "en" ? "en-US" : "hi-IN"
-                    )}
-                  </p>
-                  <p className="text-gray-700">{event.description[language]}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <EventSlider language={language}/>
         </div>
       </ParallaxSection>
 
       {/* Members Section */}
       <ParallaxSection className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-24">
-          <h2 className="text-4xl font-bold text-center mb-12 flex items-center justify-center">
-            <Users className="mr-3" />
-            {language === "en" ? "Members" : "सदस्य"}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {members.map((member) => (
-              <div key={member.id} className="text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                <p className="text-purple-600">{member.role[language]}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* <div className="max-w-7xl mx-auto px-4 py-24"> */}
+        <MemberSection />
+        {/* </div> */}
       </ParallaxSection>
 
       {/* Blog Preview Section */}
